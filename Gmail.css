@@ -18,14 +18,6 @@
 }
 
 /* Main */
-/* Main part, might be changed over time */
-div:has(> [class="AO"]) {
-  background-image: var(--noise);
-  background-blend-mode: overlay;
-  background-repeat: repeat;
-  backdrop-filter: blur(60px) saturate(1.75);
-}
-
 div[aria-live]
   + div
   > div:last-child
@@ -33,10 +25,14 @@ div[aria-live]
   > div:last-child
   > div:nth-child(2)
   > div {
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow:
-    inset 0 0 12px rgba(255, 255, 255, 1),
-    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  background-image: var(--noise);
+  background-blend-mode: overlay;
+  background-repeat: repeat;
+  backdrop-filter: blur(60px) saturate(1.75);
+
+  outline: 1px solid rgba(255, 255, 255, 0.06);
+  outline-offset: -1px;
+  box-shadow: inset 0 0 100px rgba(255, 255, 255, 0.05);
 }
 
 [role="menu"] {
@@ -73,4 +69,38 @@ span[role="button"]:hover {
 div[data-tooltip][data-tooltip-align="r"][class*=" "]:hover,
 span[role="button"]:hover {
   box-shadow: var(--highlight-weak);
+}
+
+::-webkit-scrollbar {
+  width: 10px !important;
+  height: 10px !important;
+}
+
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-track:hover,
+::-webkit-scrollbar-track:active {
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background-image: var(--noise);
+  background-blend-mode: overlay;
+  background-repeat: repeat;
+  backdrop-filter: blur(10px) saturate(1.5);
+
+  border: 0px solid transparent;
+  border-width: 2px !important;
+
+  border-radius: 100px;
+  box-shadow: none !important;
+}
+
+::-webkit-scrollbar-thumb:hover,
+::-webkit-scrollbar-thumb:active {
+  box-shadow: none !important;
+  background-color: rgba(255, 255, 255, 0.55) !important;
 }
