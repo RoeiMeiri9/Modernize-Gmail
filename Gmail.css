@@ -37,6 +37,12 @@ div[aria-live]
   }
 }
 
+div[role="button"]:hover:after,
+div[role="button"]:hover div:after {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+}
+
 /* Quick Settings Menus */
 [role="menu"] {
   background-image: var(--noise);
