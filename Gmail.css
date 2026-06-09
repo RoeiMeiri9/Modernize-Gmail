@@ -12,7 +12,10 @@
     inset 0 1px 0px oklab(100% 0 -0.00011 / 0.05),
     inset 0 2px 4px oklab(100% 0 -0.00011 / 0.05);
 
-  --highlight-white: inset 0 0 100px oklab(100% 0 -0.00011 / 0.02);
+  --highlight-white:
+    inset 0 0 100px oklab(100% 0 -0.00011 / 0.02),
+    inset 0 1px 0px oklab(100% 0 -0.00011 / 0.02),
+    inset 0 3px 8px oklab(100% 0 -0.00011 / 0.02);
 }
 
 /* Main Content Area */
@@ -24,7 +27,7 @@ div[aria-live]
   > div:nth-child(2)
   > div {
   backdrop-filter: blur(60px) saturate(1.75);
-  outline: 1px solid oklab(100% 0 -0.00011 / 0.06);
+  outline: 1px solid oklab(100% 0 -0.00011 / 0.03);
   outline-offset: -1px;
   box-shadow: var(--highlight-white);
   & > div {
