@@ -11,6 +11,120 @@
     inset 0 0 12px rgba(255, 255, 255, 0.05),
     inset 0 1px 0px rgba(255, 255, 255, 0.05),
     inset 0 2px 4px rgba(255, 255, 255, 0.05);
+  /* Adding blur-behind to Gmail*/
+  :root {
+    --noise: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.5' numOctaves='5' result='t'/%3E%3CfeSpecularLighting surfaceScale='0.5' specularConstant='6' specularExponent='30' in='t' result='s'%3E%3CfeDistantLight azimuth='20' elevation='132'/%3E%3C/feSpecularLighting%3E%3CfeGaussianBlur stdDeviation='0.4' in='s'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.02'/%3E%3C/svg%3E");
+
+    --highlight-strong:
+      inset 0 0 12px rgba(255, 255, 255, 0.05),
+      inset 0 1px 0px rgba(255, 255, 255, 0.15),
+      inset 0 2px 4px rgba(255, 255, 255, 0.05);
+
+    --highlight-weak:
+      inset 0 0 12px rgba(255, 255, 255, 0.05),
+      inset 0 1px 0px rgba(255, 255, 255, 0.05),
+      inset 0 2px 4px rgba(255, 255, 255, 0.05);
+
+    --highlight-white: inset 0 0 100px rgba(255, 255, 255, 0.15);
+  }
+
+  /* Main Content Area */
+  div[aria-live]
+    + div
+    > div:last-child
+    > div
+    > div:last-child
+    > div:nth-child(2)
+    > div {
+    background-image: var(--noise);
+    background-blend-mode: overlay;
+    background-repeat: repeat;
+    backdrop-filter: blur(60px) saturate(1.75);
+
+    outline: 1px solid rgba(255, 255, 255, 0.06);
+    outline-offset: -1px;
+    box-shadow: var(--highlight-white);
+  }
+
+  /* Quick Settings Menus */
+  [role="menu"] {
+    background-image: var(--noise);
+    background-blend-mode: overlay;
+    background-repeat: repeat;
+    backdrop-filter: blur(25px) saturate(2.5);
+
+    box-shadow: var(--highlight-white);
+  }
+
+  /* Search Bar */
+  form[role="search"] {
+    background-image: var(--noise);
+    background-blend-mode: overlay;
+    background-repeat: repeat;
+    backdrop-filter: blur(10px) saturate(1.25);
+
+    box-shadow: var(--highlight-strong);
+  }
+
+  /* Left/Right Navigation Buttons & Icons */
+  div[data-tooltip][data-tooltip-align][class*=" "]:hover,
+  div[data-tooltip][data-tooltip-align][class*=" "]:has(a[tabindex="0"]),
+  span[role="button"]:focus,
+  span[role="button"]:hover {
+    background-image: var(--noise);
+    background-blend-mode: overlay;
+    background-repeat: repeat;
+    backdrop-filter: blur(10px) saturate(1.5);
+
+    box-shadow: var(--highlight-strong);
+  }
+
+  div[data-tooltip][data-tooltip-align][class*=" "]:hover,
+  span[role="button"]:hover {
+    box-shadow: var(--highlight-weak);
+  }
+
+  /* Email Rows Hover Effect */
+  tr.zA[role="row"]:hover {
+    box-shadow: none;
+    border-bottom: inherit;
+
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  tr[role="row"]:has(td[role="gridcell"]:nth-last-child(3) span[class]):hover {
+    background: rgba(255, 255, 255, 0.125);
+  }
+
+  /* Custom Scrollbars */
+  ::-webkit-scrollbar {
+    width: 10px !important;
+    height: 10px !important;
+  }
+
+  ::-webkit-scrollbar-track,
+  ::-webkit-scrollbar-track:hover,
+  ::-webkit-scrollbar-track:active {
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border: 0px solid transparent;
+    border-width: 2px !important;
+
+    border-radius: 100px;
+    box-shadow: none !important;
+  }
+
+  ::-webkit-scrollbar-thumb:hover,
+  ::-webkit-scrollbar-thumb:active {
+    box-shadow: none !important;
+    background-color: rgba(255, 255, 255, 0.55) !important;
+  }
 
   --highlight-white: inset 0 0 100px rgba(255, 255, 255, 0.15);
 }
