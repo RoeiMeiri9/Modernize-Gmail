@@ -7,8 +7,7 @@ A premium Fluent Design overhaul for Gmail, with deep blur-behind effects, and m
 ## Features
 
 - **True Acrylic & Mica Effect:** Combines heavy $60\text{px}$ blurring with tailored saturation multipliers ($1.75\times - 2.5\times$) to keep underlying colors vivid and sharp.
-- **Next-Gen Color Space:** Written using `oklab()` for mathematically perfect contrast and beautiful alpha-blending transparency.
-- **Physical Micro-Texture:** Implements a subtle SVG fractal noise overlay to eliminate digital banding and mimic physical hardware glass.
+- **Physical Micro-Texture:** Implements a subtle SVG fractal noise overlay to mimic physical glass.
 - **Overhauled Interface:** Redesigned search bar, custom scrollbars, row hovers, floating quick settings, and navigation buttons.
 
 ## Installation Instructions
