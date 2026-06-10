@@ -25,12 +25,12 @@ Once you have Stylus installed, you can choose **one** of the following methods 
 
 #### Method A: Direct from GitHub (Recommended - Auto Updates)
 
-Simply click the link below. Stylus will automatically open and prompt you to install:
+Simply click the link below. Stylus will automatically open and prompt you to install:\
 **[Click here to install via GitHub](https://raw.githubusercontent.com/RoeiMeiri9/Gmail-Redesign/main/Gmail.user.css)**
 
 #### Method B: Via Userstyles.world
 
-You can also view and install the style through the community hub:
+You can also view and install the style through the community hub:\
 **[View on Userstyles.world](https://userstyles.world/style/28458/modernize-gmail)**
 
 ## Configuration & Customization
