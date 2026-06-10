@@ -2,7 +2,7 @@
 
 A premium Fluent Design overhaul for Gmail, with deep blur-behind effects, and micro-textured backdrop filters. This userstyle transforms Gmail's flat web interface into a stunning, translucent desktop-class experience.
 
-![Demonstration of the redesign in action](https://raw.githubusercontent.com/RoeiMeiri9/Gmail-Redesign/refs/heads/main/advertisments/Redesign%20Gmail%20Screnshot.png)
+![Demonstration of the redesign in action](https://raw.githubusercontent.com/RoeiMeiri9/Gmail-Redesign/refs/heads/main/Promo/Redesign%20Gmail%20Screnshot.png)
 
 ## Features
 
