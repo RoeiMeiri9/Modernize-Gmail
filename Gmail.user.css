@@ -1,16 +1,7 @@
 /* ==UserStyle==
 @name           Modernize Gmail
 @namespace      github.com/RoeiMeiri9/Gmail-Redesign.git
-@version        1.0.0
-@description    A premium Windows 11-inspired Acrylic & Mica UI for Gmail.
-@author         Roei Meiri
-@license        No License
-==/UserStyle== */
-
-/* ==UserStyle==
-@name           Modernize Gmail
-@namespace      github.com/RoeiMeiri9/Gmail-Redesign.git
-@version        1.0.0
+@version        1.0.1
 @description    A premium Windows 11-inspired Acrylic & Mica UI for Gmail.
 @author         Roei Meiri
 @license        No License
@@ -115,7 +106,7 @@
 
   /* New Email */
   div[role="navigation"] > div > div > div[role="button"] {
-    background: oklab(100% 0 -0.00011 / 0.8);
+    background: oklab(100% 0 -0.00011 / 0.95);
     background-image: var(--noise);
     background-blend-mode: overlay;
     background-repeat: repeat;
