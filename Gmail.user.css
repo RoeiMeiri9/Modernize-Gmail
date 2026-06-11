@@ -8,219 +8,221 @@
 ==/UserStyle== */
 @-moz-document url-prefix("https://mail.google.com/mail/")
 {
-  /* Adding blur-behind to Gmail*/
-  :root {
-    --noise: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.5' numOctaves='5' result='t'/%3E%3CfeSpecularLighting surfaceScale='0.5' specularConstant='6' specularExponent='30' in='t' result='s'%3E%3CfeDistantLight azimuth='20' elevation='132'/%3E%3C/feSpecularLighting%3E%3CfeGaussianBlur stdDeviation='0.4' in='s'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.02'/%3E%3C/svg%3E");
+    /* Adding blur-behind to Gmail*/
+    :root {
+        --noise: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.5' numOctaves='5' result='t'/%3E%3CfeSpecularLighting surfaceScale='0.5' specularConstant='6' specularExponent='30' in='t' result='s'%3E%3CfeDistantLight azimuth='20' elevation='132'/%3E%3C/feSpecularLighting%3E%3CfeGaussianBlur stdDeviation='0.4' in='s'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.02'/%3E%3C/svg%3E");
 
-    --highlight-strong:
-      inset 0 0 12px oklab(100% 0 -0.00011 / 0.05),
-      inset 0 1px 0px oklab(100% 0 -0.00011 / 0.15),
-      inset 0 2px 4px oklab(100% 0 -0.00011 / 0.05);
+        --highlight-strong:
+            inset 0 0 12px oklab(100% 0 -0.00011 / 0.05),
+            inset 0 1px 0px oklab(100% 0 -0.00011 / 0.15),
+            inset 0 2px 4px oklab(100% 0 -0.00011 / 0.05);
 
-    --highlight-weak:
-      inset 0 0 12px oklab(100% 0 -0.00011 / 0.05),
-      inset 0 1px 0px oklab(100% 0 -0.00011 / 0.05),
-      inset 0 2px 4px oklab(100% 0 -0.00011 / 0.05);
+        --highlight-weak:
+            inset 0 0 12px oklab(100% 0 -0.00011 / 0.05),
+            inset 0 1px 0px oklab(100% 0 -0.00011 / 0.05),
+            inset 0 2px 4px oklab(100% 0 -0.00011 / 0.05);
 
-    --highlight-white:
-      inset 0 0 100px oklab(100% 0 -0.00011 / 0.02),
-      inset 0 1px 0px oklab(100% 0 -0.00011 / 0.02),
-      inset 0 3px 8px oklab(100% 0 -0.00011 / 0.02);
-  }
-
-  /* Main Content Area */
-  div[aria-live]
-    + div
-    > div:last-child
-    > div
-    > div:last-child
-    > div:nth-child(2)
-    > div {
-    backdrop-filter: blur(60px) saturate(1.75);
-    outline: 1px solid oklab(100% 0 -0.00011 / 0.03);
-    outline-offset: -1px;
-    box-shadow: var(--highlight-white);
-    & > div {
-      background-image: var(--noise);
-      background-blend-mode: overlay;
-      background-repeat: repeat;
+        --highlight-white:
+            inset 0 0 100px oklab(100% 0 -0.00011 / 0.02),
+            inset 0 1px 0px oklab(100% 0 -0.00011 / 0.02),
+            inset 0 3px 8px oklab(100% 0 -0.00011 / 0.02);
     }
 
-    /* Border above children */
-    &:after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      outline: 1px solid oklab(100% 0 -0.00011 / 0.03);
-      outline-offset: -1px;
-      border-radius: inherit;
-      z-index: 1;
+    /* Main Content Area */
+    div[aria-live]
+        + div
+        > div:last-child
+        > div
+        > div:last-child
+        > div:nth-child(2)
+        > div {
+        backdrop-filter: blur(60px) saturate(1.75);
+        outline: 1px solid oklab(100% 0 -0.00011 / 0.03);
+        outline-offset: -1px;
+        box-shadow: var(--highlight-white);
+        & > div {
+            background-image: var(--noise);
+            background-blend-mode: overlay;
+            background-repeat: repeat;
+        }
+
+        /* Border above children */
+        &:after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            outline: 1px solid oklab(100% 0 -0.00011 / 0.03);
+            outline-offset: -1px;
+            border-radius: inherit;
+            z-index: 1;
+        }
     }
-  }
 
-  /* Bubble Buttons */
-  /* Search and Gemini overrides */
-  form[role="search"] button:before,
-  header[role="banner"] a:before {
-    opacity: 1 !important;
-    background: transparent !important;
-    transition: none;
-    backdrop-filter: none !important;
-  }
+    /* Bubble Buttons */
+    /* Search and Gemini overrides */
+    form[role="search"] button:before,
+    header[role="banner"] a:before {
+        opacity: 1 !important;
+        background: transparent !important;
+        transition: none;
+        backdrop-filter: none !important;
+    }
 
-  /* Defining Bubble-Buttons */
-  div[role="button"]:not([class="T-I T-I-KE L3"]):hover:before,
-  div[role="button"]:not([class="T-I T-I-KE L3"]):focus:before,
-  div[role="button"]:hover div:before,
-  div[role="button"]:focus div:before,
-  div[role="button"] div:hover:before,
-  div[role="button"] div:focus:before,
-  div[role="button"] div:hover span:before,
-  div[role="button"] div:focus span:before,
-  header[role="banner"] a[role="button"]:hover,
-  header[role="banner"] a[role="button"]:focus,
-  a[role="button"]:not([class="gb_C"]):hover:before,
-  a[role="button"]:not([class="gb_C"]):before,
-  button:not([class="OB"]):not(
-      header[role="banner"]
-        > div:nth-child(2)
-        > div:nth-child(2)
-        > div:nth-child(3)
-        *
-    ):hover:before,
-  button:not([class="OB"]):not(
-      header[role="banner"]
-        > div:nth-child(2)
-        > div:nth-child(2)
-        > div:nth-child(3)
-        *
-    ):focus:before,
-  form[role="search"] button:hover:before,
-  form[role="search"] button:focus:before,
-  div[role="button"] a:hover a:before,
-  div[role="button"] a:focus a:before {
-    background-color: oklab(100% 0 -0.00011 / 0.1) !important;
-    background-image: var(--noise) !important;
-    background-blend-mode: overlay;
-    box-shadow: var(--highlight-weak) !important;
-    opacity: 1 !important;
+    /* Defining Bubble-Buttons */
+    div[role="button"]:not([class="T-I T-I-KE L3"]):hover:before,
+    div[role="button"]:not([class="T-I T-I-KE L3"]):focus:before,
+    div[role="button"]:hover div:before,
+    div[role="button"]:focus div:before,
+    div[role="button"] div:hover:before,
+    div[role="button"] div:focus:before,
+    div[role="button"] div:hover span:before,
+    div[role="button"] div:focus span:before,
+    header[role="banner"] a[role="button"]:hover,
+    header[role="banner"] a[role="button"]:focus,
+    a[role="button"]:not([class="gb_C"]):hover:before,
+    a[role="button"]:not([class="gb_C"]):before,
+    button:not([class="OB"]):not(
+            header[role="banner"]
+                > div:nth-child(2)
+                > div:nth-child(2)
+                > div:nth-child(3)
+                *
+        ):hover:before,
+    button:not([class="OB"]):not(
+            header[role="banner"]
+                > div:nth-child(2)
+                > div:nth-child(2)
+                > div:nth-child(3)
+                *
+        ):focus:before,
+    form[role="search"] button:hover:before,
+    form[role="search"] button:focus:before,
+    div[role="button"] a:hover a:before,
+    div[role="button"] a:focus a:before {
+        background-color: oklab(100% 0 -0.00011 / 0.1) !important;
+        background-image: var(--noise) !important;
+        background-blend-mode: overlay;
+        box-shadow: var(--highlight-weak) !important;
+        opacity: 1 !important;
 
-    backdrop-filter: blur(10px) saturate(1.25);
-  }
+        backdrop-filter: blur(10px) saturate(1.25);
+    }
 
-  /* Adding mix-blend-mode to bubble-buttons */
-  div[role="button"]:not(header *, [class="T-I T-I-KE L3"]):hover:before,
-  div[role="button"]:not(header *, [class="T-I T-I-KE L3"]):focus:before,
-  div[role="button"]:not(header *):hover div:before,
-  div[role="button"]:not(header *):focus div:before,
-  button:not(header *):hover:before,
-  button:not(header *):focus:before,
-  a[role="button"]:not(header *):hover:before {
-    mix-blend-mode: overlay !important;
-  }
+    /* Adding mix-blend-mode to bubble-buttons */
+    div[role="button"]:not(header *, [class="T-I T-I-KE L3"]):hover:before,
+    div[role="button"]:not(header *, [class="T-I T-I-KE L3"]):focus:before,
+    div[role="button"]:not(header *):hover div:before,
+    div[role="button"]:not(header *):focus div:before,
+    button:not(header *):hover:before,
+    button:not(header *):focus:before,
+    a[role="button"]:not(header *):hover:before {
+        mix-blend-mode: overlay !important;
+    }
 
-  /* Quick Settings Menus */
-  [role="menu"]:not(.J-M) {
-    background-image: var(--noise);
-    background-blend-mode: overlay;
-    background-repeat: repeat;
-    backdrop-filter: blur(25px) saturate(2.5);
+    /* Quick Settings Menus */
+    [role="menu"]:not(.J-M) {
+        background-image: var(--noise);
+        background-blend-mode: overlay;
+        background-repeat: repeat;
+        backdrop-filter: blur(25px) saturate(2.5);
 
-    box-shadow: var(--highlight-white);
-  }
+        box-shadow: var(--highlight-white);
+    }
 
-  /* Search Bar */
-  form[role="search"] {
-    background-image: var(--noise);
-    background-blend-mode: overlay;
-    background-repeat: repeat;
-    backdrop-filter: blur(10px) saturate(1.25);
+    /* Search Bar */
+    form[role="search"] {
+        background-image: var(--noise);
+        background-blend-mode: overlay;
+        background-repeat: repeat;
+        backdrop-filter: blur(10px) saturate(1.25);
 
-    box-shadow: var(--highlight-strong);
-  }
+        box-shadow: var(--highlight-strong);
+    }
 
-  /* Left/Right Navigation Buttons & Icons */
-  div[data-tooltip][data-tooltip-align][class*=" "]:not(
-      .aLF-aPX-awL-I,
-      .aLF-aPX-axp-I
-    ):hover,
-  div[data-tooltip][data-tooltip-align]:has(a[tabindex="0"]):not(
-      .aLF-aPX-awL-I,
-      .aLF-aPX-axp-I
-    ),
-  span[role="button"]:not(td *):hover,
-  span[role="button"]:not(td *):focus {
-    background-image: var(--noise);
-    background-blend-mode: overlay;
-    background-repeat: repeat;
-    backdrop-filter: blur(10px) saturate(1.5);
+    /* Left/Right Navigation Buttons & Icons */
+    div[data-tooltip][data-tooltip-align][class*=" "]:not(
+            .aLF-aPX-awL-I,
+            .aLF-aPX-axp-I
+        ):hover,
+    div[data-tooltip][data-tooltip-align]:has(a[tabindex="0"]):not(
+            .aLF-aPX-awL-I,
+            .aLF-aPX-axp-I
+        ),
+    span[role="button"]:not(td *):hover,
+    span[role="button"]:not(td *):focus {
+        background-image: var(--noise);
+        background-blend-mode: overlay;
+        background-repeat: repeat;
+        backdrop-filter: blur(10px) saturate(1.5);
 
-    box-shadow: var(--highlight-strong);
-  }
+        box-shadow: var(--highlight-strong);
+    }
 
-  /* Left/Right Navigation Buttons & Icons - unselected */
-  div[data-tooltip][data-tooltip-align][class*=" "]:not(
-      .aLF-aPX-awL-I,
-      .aLF-aPX-axp-I
-    ):hover,
-  span[role="button"]:not(td *):hover {
-    box-shadow: var(--highlight-weak);
-  }
+    /* Left/Right Navigation Buttons & Icons - unselected */
+    div[data-tooltip][data-tooltip-align][class*=" "]:not(
+            .aLF-aPX-awL-I,
+            .aLF-aPX-axp-I
+        ):hover,
+    span[role="button"]:not(td *):hover {
+        box-shadow: var(--highlight-weak);
+    }
 
-  /* Email Rows Hover Effect */
-  tr.zA[role="row"]:hover {
-    box-shadow: none;
-    border-bottom: inherit;
+    /* Email Rows Hover Effect */
+    tr.zA[role="row"]:hover {
+        box-shadow: none;
+        border-bottom: inherit;
 
-    background: oklab(100% 0 -0.00011 / 0.1);
-  }
+        background: oklab(100% 0 -0.00011 / 0.1);
+    }
 
-  tr[role="row"]:has(td[role="gridcell"]:nth-last-child(3) span[class]):hover {
-    background: oklab(100% 0 -0.00011 / 0.13);
-  }
+    tr[role="row"]:has(
+            td[role="gridcell"]:nth-last-child(3) span[class]
+        ):hover {
+        background: oklab(100% 0 -0.00011 / 0.13);
+    }
 
-  /* New Email */
-  div[role="navigation"] > div > div > div[role="button"] {
-    background: oklab(100% 0 -0.00011 / 0.95);
-    background-image: var(--noise);
-    background-blend-mode: overlay;
-    background-repeat: repeat;
-    backdrop-filter: blur(20px) saturate(2.8) brightness(2.8);
+    /* New Email */
+    div[role="navigation"] > div > div > div[role="button"] {
+        background: oklab(100% 0 -0.00011 / 0.95);
+        background-image: var(--noise);
+        background-blend-mode: overlay;
+        background-repeat: repeat;
+        backdrop-filter: blur(20px) saturate(2.8) brightness(2.8);
 
-    box-shadow:
-      inset 0 0 12px oklab(100% 0 -0.00011 / 0.4),
-      inset 0 1px 0px oklab(100% 0 -0.00011 / 0.5),
-      inset 0 2px 4px oklab(100% 0 -0.00011 / 0.2);
-  }
+        box-shadow:
+            inset 0 0 12px oklab(100% 0 -0.00011 / 0.4),
+            inset 0 1px 0px oklab(100% 0 -0.00011 / 0.5),
+            inset 0 2px 4px oklab(100% 0 -0.00011 / 0.2);
+    }
 
-  /* Custom Scrollbars */
-  ::-webkit-scrollbar {
-    width: 10px !important;
-    height: 10px !important;
-  }
+    /* Custom Scrollbars */
+    ::-webkit-scrollbar {
+        width: 10px !important;
+        height: 10px !important;
+    }
 
-  ::-webkit-scrollbar-track,
-  ::-webkit-scrollbar-track:hover,
-  ::-webkit-scrollbar-track:active {
-    background: transparent !important;
-    border: none !important;
-    border-radius: 0 !important;
-    box-shadow: none !important;
-    -webkit-box-shadow: none !important;
-  }
+    ::-webkit-scrollbar-track,
+    ::-webkit-scrollbar-track:hover,
+    ::-webkit-scrollbar-track:active {
+        background: transparent !important;
+        border: none !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        -webkit-box-shadow: none !important;
+    }
 
-  ::-webkit-scrollbar-thumb {
-    border: 0px solid transparent;
-    border-width: 2px !important;
+    ::-webkit-scrollbar-thumb {
+        border: 0px solid transparent;
+        border-width: 2px !important;
 
-    border-radius: 100px;
-    box-shadow: none !important;
-  }
+        border-radius: 100px;
+        box-shadow: none !important;
+    }
 
-  ::-webkit-scrollbar-thumb:vertical:hover,
-  ::-webkit-scrollbar-thumb:vertical:active {
-    box-shadow: none !important;
-    background-color: oklab(100% 0 -0.00011 / 0.55) !important;
-  }
+    ::-webkit-scrollbar-thumb:vertical:hover,
+    ::-webkit-scrollbar-thumb:vertical:active {
+        box-shadow: none !important;
+        background-color: oklab(100% 0 -0.00011 / 0.55) !important;
+    }
 }
