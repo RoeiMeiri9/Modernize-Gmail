@@ -97,8 +97,9 @@
     backdrop-filter: blur(10px) saturate(1.25);
   }
 
-  div[role="button"]:not(header *):hover:before,
-  div[role="button"]:not(header *):focus:before,
+  /* Adding mix-blend-mode to bubble-buttons */
+  div[role="button"]:not(header *, [class="T-I T-I-KE L3"]):hover:before,
+  div[role="button"]:not(header *, [class="T-I T-I-KE L3"]):focus:before,
   div[role="button"]:not(header *):hover div:before,
   div[role="button"]:not(header *):focus div:before,
   button:not(header *):hover:before,
