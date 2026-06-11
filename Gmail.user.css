@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Modernize Gmail
 @namespace      github.com/RoeiMeiri9/Gmail-Redesign.git
-@version        1.0.3
+@version        1.0.4
 @description    A premium Windows 11-inspired Acrylic & Mica UI for Gmail.
 @author         Roei Meiri
 @license        No License
@@ -93,7 +93,16 @@
     opacity: 1 !important;
 
     backdrop-filter: blur(10px);
-    mix-blend-mode: overlay;
+  }
+
+  div[role="button"]:not(header *):hover:before,
+  div[role="button"]:not(header *):focus:before,
+  div[role="button"]:not(header *):hover div:before,
+  div[role="button"]:not(header *):focus div:before,
+  button:not(header *):hover:before,
+  button:not(header *):focus:before,
+  a[role="button"]:not(header *):hover:before {
+    mix-blend-mode: overlay !important;
   }
 
   /* Quick Settings Menus */
