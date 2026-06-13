@@ -37,8 +37,6 @@
         > div:nth-child(2)
         > div {
         backdrop-filter: blur(60px) saturate(1.75);
-        outline: 1px solid oklab(100% 0 -0.00011 / 0.03);
-        outline-offset: -1px;
         box-shadow: var(--highlight-white);
         & > div {
             background-image: var(--noise);
@@ -52,7 +50,7 @@
             position: absolute;
             inset: 0;
             pointer-events: none;
-            outline: 1px solid oklab(100% 0 -0.00011 / 0.03);
+            outline: 1px solid oklab(100% 0 -0.00011 / 0.06);
             outline-offset: -1px;
             border-radius: inherit;
             z-index: 1;
